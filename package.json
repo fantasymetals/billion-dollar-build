@@ -1,0 +1,27 @@
+{
+  "name": "billion-dollar-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-template": "bun run scripts/build-template.ts",
+    "bootstrap": "bash scripts/bootstrap.sh",
+    "verify": "bash scripts/verify.sh",
+    "pi": "bash scripts/run-pi.sh",
+    "format": "biome format --write .",
+    "format:check": "biome check --formatter-enabled=true --linter-enabled=false --assist-enabled=false .",
+    "lint": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=false .",
+    "typecheck": "tsc -p tsconfig.json --pretty false",
+    "test": "bun test",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
+    "check:changed": "bash scripts/check-changed.sh",
+    "release-check": "bun run check"
+  },
+  "dependencies": {
+    "e2b": "^2.19.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.12",
+    "@types/bun": "^1.3.12",
+    "typescript": "^6.0.2"
+  }
+}

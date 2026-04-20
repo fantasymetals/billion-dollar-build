@@ -1,0 +1,6 @@
+node_modules/
+.sandbox-id
+.e2b-template-id
+*.env
+.env.*
+bun.lock
